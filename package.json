@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "exports": "./main.js",
+  "author": "NaughtySora <naughtysora@proton.me>",
+  "keywords": [
+    "nodejs",
+    "password",
+    "scrypt",
+    "bcrypt",
+    "argon2"
+  ],
+  "scripts": {
+    "test": "c8 node test/index.js"
+  },
+  "dependencies": {
+    "naughty-util": "^0.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "c8": "^11.0.0",
+    "typescript": "^6.0.3"
+  }
+}
