@@ -20,7 +20,7 @@ describe('Hashing algos', async () => {
       assert.ok(valid);
     });
 
-    await it('hash - compare - positive', async () => {
+    await it('hash - compare - negative', async () => {
       const password = Buffer.from('abcA1234567');
       const scrypt = new Scrypt(SCRYPT_PARAMS);
       const hash = await scrypt.hash(password);
