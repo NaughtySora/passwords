@@ -37,3 +37,5 @@ nice hex output, large enough, doesn't influence security, long can hurt perform
 
 #### argon2
 
+#### rehashing
+- updating hashes during login if hash got old.

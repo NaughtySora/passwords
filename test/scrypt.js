@@ -10,22 +10,26 @@ const SCRYPT_PARAMS = {
   maxmem: 64 * 1024 * 1024, version: 2
 };
 
+const { maxmem, ...options } = SCRYPT_PARAMS;
+
 describe('Hashing algos', async () => {
   await describe('scrypt', async () => {
     await it('hash - compare - positive', async () => {
       const password = Buffer.from('abcA1234567');
       const scrypt = new Scrypt(SCRYPT_PARAMS);
       const hash = await scrypt.hash(password);
-      const valid = await scrypt.compare(password, hash);
-      assert.ok(valid);
+      const result = await scrypt.compare(password, hash);
+      assert.ok(result.valid);
+      assert.deepEqual(result.options, options);
     });
 
     await it('hash - compare - negative', async () => {
       const password = Buffer.from('abcA1234567');
       const scrypt = new Scrypt(SCRYPT_PARAMS);
       const hash = await scrypt.hash(password);
-      const valid = await scrypt.compare(Buffer.from('abcA1234566'), hash);
-      assert.ok(!valid);
+      const result = await scrypt.compare(Buffer.from('abcA1234566'), hash);
+      assert.ok(!result.valid);
+      assert.deepEqual(result.options, options);
     });
   });
 });
