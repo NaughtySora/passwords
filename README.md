@@ -22,13 +22,24 @@ internally uses salsa20/8, structured in blocks
 nice hex output, large enough, length doesn't influence security, long can hurt performance
 
 #### bcrypt
-- old, simple, battle tested
+- used in old systems, old languages
 - based on blowfish key schedule
 - configurable work factor
 - cpu-hard, weak memory
 - uses 72 bytes, long passwords may be silently truncated
 - lacking flexibility
-- used in old systems, old languages
 
 #### argon2
-- TBD
+- more efficient memory filling/reuse than scrypt
+- better tunable parameters
+- cleaner attack-cost modeling
+- better GPU resistance per memory unit
+- requiring: 
+1. CPU work
+2. memory allocation, 
+3. memory movement, 
+4. controlled parallel computation
+- uses: 
+1. m - memory cost, how much RAM the algorithm allocates
+2. t - time cost, how many passes are made over memory
+3. p - parallelism, how many lanes/threads the work is divided into
