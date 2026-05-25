@@ -5,7 +5,10 @@ const { describe, it } = require('node:test');
 
 const { Scrypt, ScryptOptions } = require('../lib/scrypt.js');
 
-const SCRYPT_PARAMS = { N: 32768, r: 8, p: 1, };
+const SCRYPT_PARAMS = {
+  N: 32768, r: 8, p: 1,
+  maxmem: 64 * 1024 * 1024,
+};
 
 describe('Hashing algos', async () => {
   await describe('scrypt', async () => {
