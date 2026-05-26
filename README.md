@@ -26,8 +26,10 @@ nice hex output, large enough, length doesn't influence security, long can hurt 
 - based on blowfish key schedule
 - configurable work factor
 - cpu-hard, weak memory
-- uses 72 bytes, long passwords may be silently truncated
+- uses 72 bytes, long passwords may be silently truncated, 
 - lacking flexibility
+- input could be prehashed to prevent truncation, also could be used pepper when prehasing to
+make it more secure.
 
 #### argon2
 - more efficient memory filling/reuse than scrypt
