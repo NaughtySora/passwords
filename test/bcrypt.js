@@ -6,8 +6,7 @@ const { compare, derive } = require('../lib/bcrypt.js');
 const { hash, digest, serialize, deserialize } = require('../lib/pepper.js');
 
 describe('Bcrypt', async () => {
-
-  await it('no prehash', async () => {
+  await it('raw input', async () => {
     const pass0 = '1234567';
     const pass1 = '1234568';
     const h0 = await derive(pass0, 10);
@@ -18,9 +17,9 @@ describe('Bcrypt', async () => {
     assert.ok(!f);
   });
 
-  await it('prehash', async () => {
-    const pass0 = hash('1234567', '');
-    const pass1 = hash('1234568', '');
+  await it('prehashed input', async () => {
+    const pass0 = hash('1234567');
+    const pass1 = hash('1234568');
     const h0 = await derive(pass0, 10);
     const h1 = await derive(pass1, 10);
     const t = await compare(pass0, h0);
