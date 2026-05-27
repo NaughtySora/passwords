@@ -16,6 +16,6 @@ module.exports = {
 
 /**
  * @next
- * 1. better readme
- * 2. more tests
+ * 1. more tests
+ * 2. reduce hash size of argon2, memory -> m, ...etc
  */
