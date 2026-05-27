@@ -5,12 +5,11 @@ const { describe, it } = require('node:test');
 const { deserialize, digest, serialize } = require('../lib/pepper.js');
 
 describe('Pepper', async () => {
-  it('Malformed input', async () => {
+  it('Malformed input', () => {
     assert.throws(deserialize.bind(null, '$1$$123$123$$123$'), {
       message: 'Input is malformed'
     })
   });
-
 
   await it('interface', async () => {
     const secrets = ['1', '2', '3'];
