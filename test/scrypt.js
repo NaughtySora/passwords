@@ -2,8 +2,7 @@
 
 const assert = require('node:assert/strict');
 const { describe, it } = require('node:test');
-
-const { Scrypt, ScryptOptions } = require('../lib/scrypt.js');
+const { Scrypt } = require('../main');
 
 const SCRYPT_PARAMS = {
   N: 32768, r: 8, p: 1,

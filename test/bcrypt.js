@@ -2,9 +2,11 @@
 
 const assert = require('node:assert/strict');
 const { describe, it } = require('node:test');
-const { compare, derive } = require('../lib/bcrypt.js');
-const { digest, serialize, deserialize } = require('../lib/pepper.js');
-const { prehash } = require('../lib/util.js');
+const {
+  prehash,
+  pepper: { digest, serialize, deserialize },
+  bcrypt: { compare, derive },
+} = require('../main');
 
 describe('Bcrypt', async () => {
   await it('rounds out of range', async () => {

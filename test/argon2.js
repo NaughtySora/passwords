@@ -2,7 +2,7 @@
 
 const assert = require('node:assert/strict');
 const { describe, it } = require('node:test');
-const { Argon2 } = require('../lib/argon2.js');
+const { Argon2 } = require('../main');
 
 const OPTIONS = {
   memory: 64,

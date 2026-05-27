@@ -2,7 +2,9 @@
 
 const assert = require('node:assert/strict');
 const { describe, it } = require('node:test');
-const { deserialize, digest, serialize } = require('../lib/pepper.js');
+const {
+  pepper: { deserialize, digest, serialize },
+} = require('../main');
 
 describe('Pepper', async () => {
   it('Malformed input', () => {

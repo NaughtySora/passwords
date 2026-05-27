@@ -13,8 +13,3 @@ module.exports = {
   bcrypt,
   prehash,
 };
-
-/**
- * @next
- * types
- */
