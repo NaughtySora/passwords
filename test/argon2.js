@@ -54,7 +54,7 @@ describe('Argon2', async () => {
       message: 'Salt has to be at least 16 bytes',
     });
     assert.rejects(argon2.hash('abc', { tagLength: 5 }), {
-      message: 'Hash length has to be at least 16 bytes',
+      message: 'Hash has to be at least 16 bytes',
     });
   });
 
