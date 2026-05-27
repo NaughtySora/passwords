@@ -2,10 +2,8 @@
 
 const assert = require('node:assert/strict');
 const { describe, it } = require('node:test');
-const { deserialize, digest,
-  serialize } = require('../lib/pepper.js');
+const { deserialize, digest, serialize } = require('../lib/pepper.js');
 
-//TODO
 describe.skip('Pepper', async () => {
   await it('test', async () => {
     const secrets = ['1', '2', '3'];
