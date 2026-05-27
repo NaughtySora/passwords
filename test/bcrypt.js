@@ -7,6 +7,12 @@ const { digest, serialize, deserialize } = require('../lib/pepper.js');
 const { prehash } = require('../lib/util.js');
 
 describe('Bcrypt', async () => {
+  await it('rounds out of range', async () => {
+    assert.rejects(derive.bind(null, '1234567', 35), {
+      message: 'Rounds are out of range, expect 4 to 31'
+    });
+  });
+
   await it('raw input', async () => {
     const pass0 = '1234567';
     const pass1 = '1234568';

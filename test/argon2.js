@@ -11,7 +11,7 @@ const OPTIONS = {
 };
 
 describe('Argon2', async () => {
-  await it('test', async () => {
+  await it('simple', async () => {
     const pass0 = '123456';
     const pass1 = '123457';
     const argon2 = new Argon2(OPTIONS);
